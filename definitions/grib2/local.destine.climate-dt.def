@@ -15,5 +15,5 @@ alias mars.model = model;
 unsigned[1] realisation = 255 : dump;
 alias mars.realisation = realisation;
 
-codetable[2] model "grib2/destine_resolution.table" : dump;
+codetable[2] resolution "grib2/destine_resolution.table" : dump;
 alias mars.resolution = resolution;

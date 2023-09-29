@@ -27,7 +27,7 @@ tablesVersionLatest=$( ${tools_dir}/grib_get -p tablesVersionLatest $sample_grib
 ${tools_dir}/grib_set -s tablesVersion=$tablesVersionLatest,setLocalDefinition=1,grib2LocalSectionNumber=1 $sample_grib2 $temp_grib_a
 
 # Then change to processed data = 12 --> DestinE
-${tools_dir}/grib_set -s productionStatusOfProcessedData=12 $temp_grib_a $destine_sample
+${tools_dir}/grib_set -s productionStatusOfProcessedData=12,class=d1 $temp_grib_a $destine_sample
 
 # Check DestinE base related keys are present and correct
 grib_check_key_exists $destine_sample destineLocalVersion,dataset,marsClass,marsType,marsStream,experimentVersionNumber
