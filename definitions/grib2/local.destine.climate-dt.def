@@ -6,13 +6,13 @@ alias mars.activity = activity;
 codetable[2] experiment "grib2/destine_experiment.table" : dump;
 alias mars.study = experiment;
 
-unsigned[1] generation  : dump;
+unsigned[1] generation = 255 : dump;
 alias mars.generation = generation;
 
 codetable[2] model "grib2/destine_model.table" : dump;
 alias mars.model = model;
 
-unsigned[1] realisation  : dump;
+unsigned[1] realisation = 255 : dump;
 alias mars.realisation = realisation;
 
 codetable[2] model "grib2/destine_resolution.table" : dump;
