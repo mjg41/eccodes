@@ -179,10 +179,11 @@ int grib_tool(int argc, char** argv)
         dump_file = stdout;
     }
 
-    /* ECC-926: Currently only GRIB indexing works. Disable the through_index if BUFR, GTS etc */
-    if (global_options.mode == MODE_GRIB &&
+    /* ECC-926: Currently only GRIB and BUFR indexing work. Disable the through_index if GTS etc */
+    if ((global_options.mode == MODE_GRIB || global_options.mode == MODE_BUFR) &&
         is_index_file(global_options.infile->name) &&
-        (global_options.infile_extra && is_index_file(global_options.infile_extra->name))) {
+        (global_options.infile_extra && is_index_file(global_options.infile_extra->name)))
+    {
         global_options.through_index = 1;
         return grib_tool_index(&global_options);
     }
@@ -510,17 +511,17 @@ static int grib_tool_index(grib_runtime_options* options)
             k2 = k2->next;
         }
         if (!found) {
-            printf("Indexes contained in the input files have different keys\n");
-            printf("keys in file %s:\n", f1);
+            fprintf(stderr, "Indexes contained in the input files have different keys!\n");
+            fprintf(stderr, "keys in file %s:\n", f1);
             k1 = options->index1->keys;
             while (k1) {
-                printf("\t%s\n", k1->name);
+                fprintf(stderr, "\t%s\n", k1->name);
                 k1 = k1->next;
             }
-            printf("keys in file %s:\n", f2);
+            fprintf(stderr, "keys in file %s:\n", f2);
             k2 = options->index2->keys;
             while (k2) {
-                printf("\t%s\n", k2->name);
+                fprintf(stderr, "\t%s\n", k2->name);
                 k2 = k2->next;
             }
             exit(1);
@@ -542,17 +543,17 @@ static int grib_tool_index(grib_runtime_options* options)
             k1 = k1->next;
         }
         if (!found) {
-            printf("Indexes contained in the input files have different keys\n");
-            printf("keys in file %s:\n", f2);
+            fprintf(stderr,"Indexes contained in the input files have different keys!\n");
+            fprintf(stderr, "keys in file %s:\n", f2);
             k2 = options->index2->keys;
             while (k2) {
-                printf("\t%s\n", k2->name);
+                fprintf(stderr, "\t%s\n", k2->name);
                 k2 = k2->next;
             }
-            printf("keys in file %s:\n", f1);
+            fprintf(stderr, "keys in file %s:\n", f1);
             k1 = options->index1->keys;
             while (k1) {
-                printf("\t%s\n", k1->name);
+                fprintf(stderr, "\t%s\n", k1->name);
                 k1 = k1->next;
             }
 

@@ -83,7 +83,7 @@ static void init(grib_action_class* c)
 //     GRIB_MUTEX_UNLOCK(&mutex1);
 // }
 
-void grib_dump(grib_action* a, FILE* f, int l)
+static void grib_dump(grib_action* a, FILE* f, int l)
 {
     grib_action_class* c = a->cclass;
     init(c);
@@ -98,22 +98,21 @@ void grib_dump(grib_action* a, FILE* f, int l)
     DEBUG_ASSERT(0);
 }
 
-void grib_xref(grib_action* a, FILE* f, const char* path)
-{
-    grib_action_class* c = a->cclass;
-    init(c);
+// void grib_xref(grib_action* a, FILE* f, const char* path)
+// {
+//     grib_action_class* c = a->cclass;
+//     init(c);
 
-    while (c) {
-        if (c->xref) {
-            c->xref(a, f, path);
-            return;
-        }
-        c = c->super ? *(c->super) : NULL;
-    }
-    printf("xref not implemented for %s\n", a->cclass->name);
-    DEBUG_ASSERT(0);
-}
-
+//     while (c) {
+//         if (c->xref) {
+//             c->xref(a, f, path);
+//             return;
+//         }
+//         c = c->super ? *(c->super) : NULL;
+//     }
+//     printf("xref not implemented for %s\n", a->cclass->name);
+//     DEBUG_ASSERT(0);
+// }
 
 void grib_action_delete(grib_context* context, grib_action* a)
 {
@@ -207,13 +206,17 @@ void grib_dump_action_branch(FILE* out, grib_action* a, int decay)
 
 void grib_dump_action_tree(grib_context* ctx, FILE* out)
 {
+    Assert(ctx);
+    Assert(ctx->grib_reader);
+    Assert(ctx->grib_reader->first);
+    Assert(out);
     grib_dump_action_branch(out, ctx->grib_reader->first->root, 0);
 }
 
-void grib_xref_action_branch(FILE* out, grib_action* a, const char* path)
-{
-    while (a) {
-        grib_xref(a, out, path);
-        a = a->next;
-    }
-}
+// void grib_xref_action_branch(FILE* out, grib_action* a, const char* path)
+// {
+//     while (a) {
+//         grib_xref(a, out, path);
+//         a = a->next;
+//     }
+// }

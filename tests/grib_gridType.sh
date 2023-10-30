@@ -50,6 +50,10 @@ for f in $ECCODES_SAMPLES_PATH/reduced_gg_pl_512_grib*.tmpl; do
     [ "$gname" = "N512" ]
 done
 
+# Octahedral
+grib_check_key_equals ${data_dir}/msl.octa.glob.grib1 gaussianGridName "O1280"
+grib_check_key_equals ${data_dir}/msl.octa.glob.grib1 gridName "O1280"
+
 # ECC-1638
 # ---------------
 cat > $tempFilt <<EOF
@@ -135,6 +139,7 @@ grib2_gridded_types="
   lambert_bf
   mercator_bf
   polar_stereographic_bf
+  healpix
 "
 grib2_spectral_types="
   sh

@@ -206,6 +206,16 @@
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
+#Maximum 10 metre wind gust since previous post-processing
+'10fg' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 22 ;
+	 typeOfFirstFixedSurface = 103 ;
+	 scaledValueOfFirstFixedSurface = 10 ;
+	 scaleFactorOfFirstFixedSurface = 0 ;
+	 typeOfStatisticalProcessing = 2 ;
+	}
 #Large-scale precipitation fraction
 'lspf' = {
 	 discipline = 0 ;
@@ -316,6 +326,12 @@
 	 parameterCategory = 3 ;
 	 parameterNumber = 18 ;
 	}
+#Standard deviation of sub-gridscale orography
+'sdor' = {
+	 discipline = 0 ;
+	 parameterCategory = 3 ;
+	 parameterNumber = 20 ;
+	}
 #Anisotropy of sub-gridscale orography
 'isor' = {
 	 discipline = 0 ;
@@ -366,19 +382,19 @@
 	 typeOfFirstFixedSurface = 8 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
-#Eastward turbulent surface stress
+#Time-integrated eastward turbulent surface stress
 'ewss' = {
 	 discipline = 0 ;
 	 parameterCategory = 2 ;
-	 parameterNumber = 38 ;
+	 parameterNumber = 62 ;
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
-#Northward turbulent surface stress
+#Time-integrated northward turbulent surface stress
 'nsss' = {
 	 discipline = 0 ;
 	 parameterCategory = 2 ;
-	 parameterNumber = 37 ;
+	 parameterNumber = 63 ;
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
@@ -404,6 +420,26 @@
 	 parameterCategory = 3 ;
 	 parameterNumber = 23 ;
 	 typeOfStatisticalProcessing = 1 ;
+	}
+#Maximum temperature at 2 metres since previous post-processing
+'mx2t' = {
+	 discipline = 0 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 0 ;
+	 typeOfFirstFixedSurface = 103 ;
+	 scaledValueOfFirstFixedSurface = 2 ;
+	 scaleFactorOfFirstFixedSurface = 0 ;
+	 typeOfStatisticalProcessing = 2 ;
+	}
+#Minimum temperature at 2 metres since previous post-processing
+'mn2t' = {
+	 discipline = 0 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 0 ;
+	 typeOfFirstFixedSurface = 103 ;
+	 scaledValueOfFirstFixedSurface = 2 ;
+	 scaleFactorOfFirstFixedSurface = 0 ;
+	 typeOfStatisticalProcessing = 3 ;
 	}
 #Ozone mass mixing ratio
 'o3' = {
@@ -687,6 +723,20 @@
 	 discipline = 10 ;
 	 parameterCategory = 0 ;
 	 parameterNumber = 89 ;
+	}
+#U-component of atmospheric surface momentum flux
+'utaua' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 17 ;
+	 typeOfFirstFixedSurface = 1 ;
+	}
+#V-component of atmospheric surface momentum flux
+'vtaua' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 18 ;
+	 typeOfFirstFixedSurface = 1 ;
 	}
 #U-component of surface momentum flux into ocean
 'utauo' = {
@@ -2394,6 +2444,14 @@
 	 scaledValueOfFirstFixedSurface = 26315 ;
 	 scaleFactorOfFirstFixedSurface = 2 ;
 	}
+#Total sky direct short-wave (solar) radiation at surface
+'fdir' = {
+	 discipline = 0 ;
+	 parameterCategory = 4 ;
+	 parameterNumber = 13 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
 #Surface direct short-wave radiation, clear sky
 'cdir' = {
 	 discipline = 0 ;
@@ -2401,6 +2459,13 @@
 	 parameterNumber = 61 ;
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
+	}
+#Cloud base height
+'cbh' = {
+	 discipline = 0 ;
+	 parameterCategory = 6 ;
+	 parameterNumber = 11 ;
+	 typeOfFirstFixedSurface = 2 ;
 	}
 #0 degrees C isothermal level (atm)
 'deg0l' = {
@@ -2411,7 +2476,7 @@
 	 scaledValueOfFirstFixedSurface = 27315 ;
 	 scaleFactorOfFirstFixedSurface = 2 ;
 	}
-#10 metre wind gust in the last 3 hours
+#Maximum 10 metre wind gust in the last 3 hours
 '10fg3' = {
 	 discipline = 0 ;
 	 parameterCategory = 2 ;
@@ -2492,6 +2557,14 @@
 	 discipline = 2 ;
 	 parameterCategory = 3 ;
 	 parameterNumber = 23 ;
+	}
+#Convective available potential energy shear
+'capes' = {
+	 discipline = 0 ;
+	 parameterCategory = 7 ;
+	 parameterNumber = 19 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfSecondFixedSurface = 8 ;
 	}
 #Tropopause pressure
 'trpp' = {
@@ -2716,6 +2789,22 @@
 	 is_chemical_srcsink = 1 ;
 	 sourceSinkChemicalPhysicalProcess = 10 ;
 	}
+#Surface short-wave (solar) radiation downward clear-sky
+'ssrdc' = {
+	 discipline = 0 ;
+	 parameterCategory = 4 ;
+	 parameterNumber = 52 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
+#Surface long-wave (thermal) radiation downward clear-sky
+'strdc' = {
+	 discipline = 0 ;
+	 parameterCategory = 5 ;
+	 parameterNumber = 8 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
 #Convective precipitation
 'cp' = {
 	 discipline = 0 ;
@@ -2764,6 +2853,22 @@
 	 parameterCategory = 1 ;
 	 parameterNumber = 56 ;
 	 typeOfFirstFixedSurface = 1 ;
+	}
+#Maximum total precipitation rate since previous post-processing
+'mxtpr' = {
+	 discipline = 0 ;
+	 parameterCategory = 1 ;
+	 parameterNumber = 52 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 2 ;
+	}
+#Minimum total precipitation rate since previous post-processing
+'mntpr' = {
+	 discipline = 0 ;
+	 parameterCategory = 1 ;
+	 parameterNumber = 52 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 3 ;
 	}
 #Mixed-layer CAPE in the lowest 50 hPa
 'mlcape50' = {
@@ -2938,7 +3043,7 @@
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
-#Runoff water equivalent
+#Runoff water equivalent (surface plus subsurface)
 'rowe' = {
 	 discipline = 2 ;
 	 parameterCategory = 0 ;
@@ -3527,6 +3632,14 @@
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 0 ;
 	}
+#Mean magnitude of turbulent surface stress
+'mmtss' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 58 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 0 ;
+	}
 #Mean large-scale precipitation fraction
 'mlspf' = {
 	 discipline = 0 ;
@@ -3644,6 +3757,22 @@
 	 parameterCategory = 5 ;
 	 parameterNumber = 5 ;
 	 typeOfFirstFixedSurface = 8 ;
+	 typeOfStatisticalProcessing = 0 ;
+	}
+#Mean eastward turbulent surface stress
+'metss' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 62 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 0 ;
+	}
+#Mean northward turbulent surface stress
+'mntss' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 63 ;
+	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 0 ;
 	}
 #Mean evaporation rate
@@ -4032,6 +4161,14 @@
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
+#Total column integrated ozone
+'tcioz' = {
+	 discipline = 0 ;
+	 parameterCategory = 14 ;
+	 parameterNumber = 2 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfSecondFixedSurface = 8 ;
+	}
 #2 metre relative humidity
 '2r' = {
 	 discipline = 0 ;
@@ -4087,14 +4224,6 @@
 	 discipline = 0 ;
 	 parameterCategory = 4 ;
 	 parameterNumber = 14 ;
-	}
-#Time-integrated surface direct short wave radiation flux
-'tidirswrf' = {
-	 discipline = 0 ;
-	 parameterCategory = 4 ;
-	 parameterNumber = 13 ;
-	 typeOfFirstFixedSurface = 1 ;
-	 typeOfStatisticalProcessing = 1 ;
 	}
 #Evaporation in the last 6 hours
 'eva06' = {
@@ -4254,27 +4383,11 @@
 	 parameterCategory = 3 ;
 	 parameterNumber = 19 ;
 	}
-#Accumulated surface downward short-wave radiation flux, clear sky
-'adswrf_cs' = {
-	 discipline = 0 ;
-	 parameterCategory = 4 ;
-	 parameterNumber = 52 ;
-	 typeOfFirstFixedSurface = 1 ;
-	 typeOfStatisticalProcessing = 1 ;
-	}
 #Accumulated surface upward short-wave radiation flux, clear sky
 'auswrf_cs' = {
 	 discipline = 0 ;
 	 parameterCategory = 4 ;
 	 parameterNumber = 53 ;
-	 typeOfFirstFixedSurface = 1 ;
-	 typeOfStatisticalProcessing = 1 ;
-	}
-#Accumulated surface downward long-wave radiation flux, clear sky
-'adlwrf_cs' = {
-	 discipline = 0 ;
-	 parameterCategory = 5 ;
-	 parameterNumber = 8 ;
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfStatisticalProcessing = 1 ;
 	}
@@ -4402,6 +4515,18 @@
 	 discipline = 3 ;
 	 parameterCategory = 1 ;
 	 parameterNumber = 15 ;
+	}
+#Cloudy reflectance
+'cdrfl' = {
+	 discipline = 3 ;
+	 parameterCategory = 1 ;
+	 parameterNumber = 31 ;
+	}
+#Clear reflectance
+'crrfl' = {
+	 discipline = 3 ;
+	 parameterCategory = 1 ;
+	 parameterNumber = 32 ;
 	}
 #Scaled radiance
 '~' = {
@@ -4639,6 +4764,38 @@
 	 parameterNumber = 50 ;
 	 typeOfFirstFixedSurface = 1 ;
 	 typeOfSecondFixedSurface = 255 ;
+	}
+#Time-integrated eastward turbulent surface stress due to orographic form drag
+'etssofd' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 64 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
+#Time-integrated northward turbulent surface stress due to orographic form drag
+'ntssofd' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 65 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
+#Time-integrated eastward turbulent surface stress due to surface roughness
+'etsssr' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 66 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
+#Time-integrated northward turbulent surface stress due to surface roughness
+'ntsssr' = {
+	 discipline = 0 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 67 ;
+	 typeOfFirstFixedSurface = 1 ;
+	 typeOfStatisticalProcessing = 1 ;
 	}
 #Universal thermal climate index
 'utci' = {
@@ -4880,8 +5037,8 @@
 	 scaledValueOfSecondFixedSurface = missing() ;
 	 scaleFactorOfSecondFixedSurface = missing() ;
 	}
-#Sea ice temperature
-'sitemp' = {
+#Vertically averaged sea ice temperature
+'vasit' = {
 	 discipline = 10 ;
 	 parameterCategory = 2 ;
 	 parameterNumber = 8 ;
@@ -5035,6 +5192,12 @@
 	 scaleFactorOfFirstFixedSurface = missing() ;
 	 scaledValueOfSecondFixedSurface = missing() ;
 	 scaleFactorOfSecondFixedSurface = missing() ;
+	}
+#Sea ice temperature
+'sit' = {
+	 discipline = 10 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 8 ;
 	}
 #Sea surface practical salinity
 'sos' = {
@@ -5943,8 +6106,8 @@
 	 scaleFactorOfSecondFixedSurface = missing() ;
 	 typeOfStatisticalProcessing = 0 ;
 	}
-#Time-mean sea ice temperature
-'avg_sitemp' = {
+#Time-mean vertically averaged sea ice temperature
+'avg_vasit' = {
 	 discipline = 10 ;
 	 parameterCategory = 2 ;
 	 parameterNumber = 8 ;
@@ -6110,6 +6273,13 @@
 	 scaleFactorOfFirstFixedSurface = missing() ;
 	 scaledValueOfSecondFixedSurface = missing() ;
 	 scaleFactorOfSecondFixedSurface = missing() ;
+	 typeOfStatisticalProcessing = 0 ;
+	}
+#Time-mean sea ice temperature
+'avg_sit' = {
+	 discipline = 10 ;
+	 parameterCategory = 2 ;
+	 parameterNumber = 8 ;
 	 typeOfStatisticalProcessing = 0 ;
 	}
 #Time-mean sea surface practical salinity
@@ -7513,11 +7683,53 @@
 	 parameterCategory = 0 ;
 	 parameterNumber = 20 ;
 	}
+#10 metre wind speed
+'wind' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 40 ;
+	 typeOfFirstFixedSurface = 102 ;
+	 scaledValueOfFirstFixedSurface = 10 ;
+	 scaleFactorOfFirstFixedSurface = 0 ;
+	}
+#Altimeter wave height
+'awh' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 37 ;
+	}
+#Altimeter corrected wave height
+'acwh' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 38 ;
+	}
+#Altimeter range relative correction
+'arrc' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 39 ;
+	}
+#10 metre wind direction
+'dwi' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 41 ;
+	 typeOfFirstFixedSurface = 102 ;
+	 scaledValueOfFirstFixedSurface = 10 ;
+	 scaleFactorOfFirstFixedSurface = 0 ;
+	}
 #2D wave spectra (single)
 '2dfd' = {
 	 discipline = 10 ;
 	 parameterCategory = 0 ;
 	 parameterNumber = 86 ;
+	}
+#Wave spectral kurtosis
+'wsk' = {
+	 discipline = 10 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 43 ;
 	}
 #Benjamin-Feir index
 'bfi' = {
@@ -8565,18 +8777,6 @@
 	 parameterCategory = 1 ;
 	 parameterNumber = 68 ;
 	}
-#Momentum flux, u component
-'uflx' = {
-	 discipline = 0 ;
-	 parameterCategory = 2 ;
-	 parameterNumber = 17 ;
-	}
-#Momentum flux, v component
-'vflx' = {
-	 discipline = 0 ;
-	 parameterCategory = 2 ;
-	 parameterNumber = 18 ;
-	}
 #Maximum wind speed
 'maxgust' = {
 	 discipline = 0 ;
@@ -8690,12 +8890,6 @@
 	 discipline = 0 ;
 	 parameterCategory = 3 ;
 	 parameterNumber = 19 ;
-	}
-#Standard deviation of sub-grid scale orography
-'sdsgso' = {
-	 discipline = 0 ;
-	 parameterCategory = 3 ;
-	 parameterNumber = 20 ;
 	}
 #Net short-wave radiation flux (top of atmosphere)
 'nswrt' = {
@@ -8822,12 +9016,6 @@
 	 discipline = 0 ;
 	 parameterCategory = 6 ;
 	 parameterNumber = 10 ;
-	}
-#Cloud base
-'cdcb' = {
-	 discipline = 0 ;
-	 parameterCategory = 6 ;
-	 parameterNumber = 11 ;
 	}
 #Cloud top
 'cdct' = {
@@ -8966,12 +9154,6 @@
 	 discipline = 0 ;
 	 parameterCategory = 14 ;
 	 parameterNumber = 0 ;
-	}
-#Total column integrated ozone
-'tcioz' = {
-	 discipline = 0 ;
-	 parameterCategory = 14 ;
-	 parameterNumber = 2 ;
 	}
 #Base spectrum width
 'bswid' = {
@@ -9674,12 +9856,6 @@
 	 discipline = 10 ;
 	 parameterCategory = 0 ;
 	 parameterNumber = 2 ;
-	}
-#Montgomery stream Function
-'mntsf' = {
-	 discipline = 0 ;
-	 parameterCategory = 2 ;
-	 parameterNumber = 6 ;
 	}
 #Sigma coordinate vertical velocity
 'sgcvv' = {
